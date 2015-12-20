@@ -1,0 +1,37 @@
+<template name="colorGenerator">
+	<div class="chosen-color-wrapper">
+		<div class="chosen-color" style="border: 10px solid {{hexValue}};">
+			<div style="position:absolute; text-align:left;">
+				{{#if currentUser}}
+					{{#if (favoriteColorExists)}}
+						<i id="btnAddFavoriteColor" class="fa fa-heart fa-2x" style="color:black;" title="Add as favorite color" alt="Add to Favorites"></i>
+					{{else}}
+						<i class="fa fa-heart fa-2x" style="color:#b30000;" title="Color is already a favorite!" alt="Existing Favorite"></i>
+					{{/if}}
+					<br/>
+					<input type="image" src="/images/palette-icon.png" id="btnAddToPalette" title="Add to Palette" alt="Add to Palette" height="35" width="35" />
+				{{/if}}
+			</div>
+			<span class="hexCode-header">{{hexValue}} {{colorName}}</span>
+			<table class="rgbTable">
+				<tr>
+					<td>Red:</td>
+					<td><span id="spnRedValue">{{redValue}}</span></td>
+					<td><span id="spnRedValue">{{redPercentage}}</span></td>
+				</tr>
+				<tr>
+					<td>Green:</td>
+					<td><span id="spnRedValue">{{greenValue}}</span></td>
+					<td><span id="spnRedValue">{{greenPercentage}}</span></td>
+				</tr>
+				<tr>
+					<td>Blue:</td>
+					<td><span id="spnRedValue">{{blueValue}}</span></td>
+					<td><span id="spnRedValue">{{bluePercentage}}</span></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	{{> shadeTint}}
+	{{> altColors}}
+</template>

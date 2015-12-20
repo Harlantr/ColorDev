@@ -1,0 +1,24 @@
+<template name="paletteCreator">
+	<h1>New Palette</h1>
+	<div class="palette-creator-wrapper">
+		<div class="row">
+			<div class="col-md-4">
+				<h5>Palette Name:</h5><input type="text" id="txtPaletteName"/>
+				<input type="button" id="btnSavePalette" value="Save Palette" title="Save Palette"/>
+			</div>
+			<div id="divPaletteColor1" class="col-md-1 palette-color" style="background-color:#eeeeee"></div>
+			<div id="divPaletteColor2" class="col-md-1 palette-color" style="background-color:#dddddd"></div>
+			<div id="divPaletteColor3" class="col-md-1 palette-color" style="background-color:#cccccc"></div>
+			<div id="divPaletteColor4" class="col-md-1 palette-color" style="background-color:#bbbbbb"></div>
+			<div id="divPaletteColor5" class="col-md-1 palette-color" style="background-color:#aaaaaa"></div>
+		</div>
+		<br/>
+		<div class="row">
+			<div style="text-align:center;" class="col-md-1 col-md-offset-4"><input type="text" id="paletteColor1"></div>
+			<div style="text-align:center;" class="col-md-1"><input type="text" id="paletteColor2"></div>
+			<div style="text-align:center;" class="col-md-1"><input type="text" id="paletteColor3"></div>
+			<div style="text-align:center;" class="col-md-1"><input type="text" id="paletteColor4"></div>
+			<div style="text-align:center;" class="col-md-1"><input type="text" id="paletteColor5"></div>
+		</div>
+	</div>
+</template>

@@ -1,0 +1,21 @@
+<template name="favoriteColorList">
+	<div class="row">
+		{{#each favoriteColor}}
+			<div class="col-xs-2">
+				<div class="favorite-color" style="background-color: {{hexCode}};">
+					<div class="favorite-color-options">
+						<div class="inner-div">
+							<i class="fa fa-trash fa-3x fa-inverse" id="{{hexCode}}" data-icon="remove" alt="Remove" title="Remove {{hexCode}}"></i>
+						</div>
+						<div class="inner-div">
+							<a href="{{pathFor 'color' _hexCode= (colorRoute hexCode) }}">
+								<i class="fa fa-external-link fa-3x fa-inverse" alt="Go To" title="Go to {{hexCode}}"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="favorite-color-text">{{hexCode}}</div>
+			</div>
+		{{/each}}
+	</div>
+</template>

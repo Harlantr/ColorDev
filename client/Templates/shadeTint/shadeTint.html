@@ -1,0 +1,26 @@
+<template name="shadeTint">
+	<div class="shade-tint-container">
+		<div class="row-fluid">
+			<div class="col-md-2 col-xs-2"><h3>Shades:</h3></div>
+			{{#each shadeDivs}}
+				<div class="col-md-1 col-xs-1">
+					<a href="{{pathFor 'color' _hexCode=(colorRoute this)}}">
+						<div class="alt-color" style="background-color: {{this}};"></div>
+						<div class="alt-color-text"><span class="hidden-xs hidden-sm">{{this}}</span></div>
+					</a>
+				</div>
+			{{/each}}
+		</div>
+		<div class="row-fluid">
+			<div class="col-md-2 col-xs-2"><h3>Tints:</h3></div>
+			{{#each tintDivs}}
+				<div class="col-md-1 col-xs-1">
+					<a href="{{pathFor 'color' _hexCode=this}}">
+						<div class="alt-color" style="background-color: {{this}};"></div>
+						<div class="alt-color-text"><span class="hidden-xs hidden-sm">{{this}}</span></div>
+					</a>
+				</div>
+			{{/each}}
+		</div>
+	</div>
+</template>

@@ -1,0 +1,24 @@
+<template name="home">
+	<h2>Users' Favorite Colors</h2>
+	<div class="row">
+		{{#each recentFavorites}}
+			<div class="col-md-2 col-xs-2" style="padding-bottom:1em;">
+				<a href="{{pathFor 'color' _hexCode= (colorRoute hexCode) }}">
+					<div class="favorite-color" style="background-color: {{hexCode}};"></div>
+					<div class="favorite-color-text"><span class="hidden-xs hidden-sm">{{hexCode}}</span></div>
+				</a>
+			</div>
+		{{/each}}
+	</div>
+	<br/>
+	<br/>
+	<h2>Users' Saved Palettes</h2>
+	<div class="row">
+		{{#each recentPalettes}}
+			<div class="col-xs-4">
+				<div><h4>{{name}}</h4></div>
+				{{#each colors}}<div class="saved-palette-color" style="background-color: {{this}}"></div>{{/each}}
+			</div>
+		{{/each}}
+	</div>
+</template>

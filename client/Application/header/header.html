@@ -1,0 +1,21 @@
+<template name="header">
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container">
+			<div class="col-xs-4" style="text-align:left;">
+				<a class="navbar-brand" href="{{pathFor 'home'}}"><span style="color:{{hexValue}}; text-shadow: 1px 1px #999999;">ColorDev</span></a>
+			</div>
+			<div class="col-xs-4" style="text-align:center; vertical-align:middle;">
+				<input type="text" id="colorpicker">
+			</div>
+			<div class="col-xs-4">
+			     <ul class="nav navbar-nav navbar-right">
+			        {{> loginButtons}}
+			        {{#if currentUser}}
+			        	<li><a href="{{pathFor 'profile' data=currentUser}}"><img src="/images/profile-icon.png" alt="Profile" height="25" width="25" /></a></li>
+		        	{{/if}}
+			     </ul>
+			</div>		
+	  </div>
+	</nav>
+</template>
+

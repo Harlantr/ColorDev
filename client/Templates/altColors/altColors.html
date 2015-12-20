@@ -1,0 +1,55 @@
+<template name="altColors">
+	<div class="row">
+		<div class="col-md-4 col-xs-4">
+			<h4>Complementary Color</h4>
+			<div class="col-md-6 col-xs-6">
+				<a href="{{pathFor 'color' _hexCode= (colorRoute hexValue) }}">
+					<div class="alt-color" style="background-color: {{hexValue}};"></div>
+					<div class="alt-color-text"><span class="hidden-xs hidden-sm">{{hexValue}}</span></div>
+				</a>
+			</div>
+			<div class="col-md-6 col-xs-6">
+				<a href="{{pathFor 'color' _hexCode= (colorRoute complementaryHexValue) }}">
+					<div class="alt-color" style="background-color: {{complementaryHexValue}};"></div>
+					<div class="alt-color-text"><span class="hidden-xs hidden-sm">{{complementaryHexValue}}</span></div>
+				</a>
+			</div>
+		</div>
+		<div class="col-md-6 col-md-offset-2 col-xs-6 col-xs-offset-2">
+			<h4>Color Triad</h4>
+			{{#each triad}}
+				<div class="col-md-4 col-xs-4">
+					<a href="{{pathFor 'color' _hexCode= (colorRoute this) }}">
+						<div class="alt-color" style="background-color: {{this}};"></div>
+						<div class="alt-color-text"><span class="hidden-xs hidden-sm">{{this}}</span></div>
+					</a>
+				</div>
+			{{/each}}
+		</div>
+	</div>
+	<br/>
+	<div class="row">
+		<div class="col-md-6 col-xs-6">
+			<h4>Split Complement</h4>
+			{{#each splitComplement}}
+				<div class="col-md-4 col-xs-4">
+					<a href="{{pathFor 'color' _hexCode= (colorRoute this) }}">
+						<div class="alt-color" style="background-color: {{this}};"></div>
+						<div class="alt-color-text"><span class="hidden-xs hidden-sm">{{this}}</span></div>
+					</a>
+				</div>
+			{{/each}}
+		</div>
+		<div class="col-md-6 col-xs-6">
+			<h4>Analogous Colors</h4>
+			{{#each analogous}}
+				<div class="col-md-4 col-xs-4">
+					<a href="{{pathFor 'color' _hexCode= (colorRoute this) }}">
+						<div class="alt-color" style="background-color: {{this}};"></div>
+						<div class="alt-color-text"><span class="hidden-xs hidden-sm">{{this}}</span></div>
+					</a>
+				</div>
+			{{/each}}
+		</div>
+	</div>
+</template>
